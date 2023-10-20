@@ -29,6 +29,7 @@ export function TasksPage() {
                   <TaskCard
                     title="Sleep 7 hours / daily"
                     summaryText="5 ⚡ 5 🌱 Reward in: 9 days"
+                    isFavorite
                   />
                 </Grid>
               </Grid>
