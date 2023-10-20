@@ -6,11 +6,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
+import { TasksPage } from './pages';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <div>hello there!</div>
+    element: <TasksPage />
   }
 ]);
 
