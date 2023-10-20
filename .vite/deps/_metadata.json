@@ -1,0 +1,119 @@
+{
+  "hash": "e930261f",
+  "browserHash": "f467c671",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "75ff1d0c",
+      "needsInterop": true
+    },
+    "@mui/material": {
+      "src": "../../node_modules/.pnpm/@mui+material@5.14.12_@emotion+react@11.11.1_@emotion+styled@11.11.0_@types+react@18.2.26_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/index.js",
+      "file": "@mui_material.js",
+      "fileHash": "e4d5d487",
+      "needsInterop": false
+    },
+    "@mui/material/Button": {
+      "src": "../../node_modules/.pnpm/@mui+material@5.14.12_@emotion+react@11.11.1_@emotion+styled@11.11.0_@types+react@18.2.26_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/Button/index.js",
+      "file": "@mui_material_Button.js",
+      "fileHash": "e17ffac2",
+      "needsInterop": false
+    },
+    "@mui/material/CssBaseline": {
+      "src": "../../node_modules/.pnpm/@mui+material@5.14.12_@emotion+react@11.11.1_@emotion+styled@11.11.0_@types+react@18.2.26_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/CssBaseline/index.js",
+      "file": "@mui_material_CssBaseline.js",
+      "fileHash": "e16ecd8b",
+      "needsInterop": false
+    },
+    "@mui/material/styles": {
+      "src": "../../node_modules/.pnpm/@mui+material@5.14.12_@emotion+react@11.11.1_@emotion+styled@11.11.0_@types+react@18.2.26_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/styles/index.js",
+      "file": "@mui_material_styles.js",
+      "fileHash": "8878ca41",
+      "needsInterop": false
+    },
+    "@mui/material/useMediaQuery": {
+      "src": "../../node_modules/.pnpm/@mui+material@5.14.12_@emotion+react@11.11.1_@emotion+styled@11.11.0_@types+react@18.2.26_react-dom@18.2.0_react@18.2.0/node_modules/@mui/material/useMediaQuery/index.js",
+      "file": "@mui_material_useMediaQuery.js",
+      "fileHash": "0b4ef98b",
+      "needsInterop": false
+    },
+    "@orbisclub/orbis-sdk": {
+      "src": "../../node_modules/.pnpm/@orbisclub+orbis-sdk@0.4.88/node_modules/@orbisclub/orbis-sdk/index.js",
+      "file": "@orbisclub_orbis-sdk.js",
+      "fileHash": "0b14051c",
+      "needsInterop": false
+    },
+    "@reduxjs/toolkit": {
+      "src": "../../node_modules/.pnpm/@reduxjs+toolkit@1.9.7_react-redux@8.1.3_react@18.2.0/node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js",
+      "file": "@reduxjs_toolkit.js",
+      "fileHash": "56193f3f",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/.pnpm/react@18.2.0/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "5628eb5c",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/.pnpm/react-dom@18.2.0_react@18.2.0/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "38b7f776",
+      "needsInterop": true
+    },
+    "react-redux": {
+      "src": "../../node_modules/.pnpm/react-redux@8.1.3_@types+react-dom@18.2.11_@types+react@18.2.26_react-dom@18.2.0_react@18.2.0_redux@4.2.1/node_modules/react-redux/es/index.js",
+      "file": "react-redux.js",
+      "fileHash": "bac79a83",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/.pnpm/react-router-dom@6.16.0_react-dom@18.2.0_react@18.2.0/node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "cb158134",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "browser-ponyfill-KUG6R4WS": {
+      "file": "browser-ponyfill-KUG6R4WS.js"
+    },
+    "chunk-AM6NLUZL": {
+      "file": "chunk-AM6NLUZL.js"
+    },
+    "chunk-CW47TEEU": {
+      "file": "chunk-CW47TEEU.js"
+    },
+    "chunk-6QZZ47PF": {
+      "file": "chunk-6QZZ47PF.js"
+    },
+    "chunk-62UWGGN7": {
+      "file": "chunk-62UWGGN7.js"
+    },
+    "chunk-2JJQPCCV": {
+      "file": "chunk-2JJQPCCV.js"
+    },
+    "chunk-DLCX44F5": {
+      "file": "chunk-DLCX44F5.js"
+    },
+    "chunk-NVGITLBX": {
+      "file": "chunk-NVGITLBX.js"
+    },
+    "chunk-GBGCQTT2": {
+      "file": "chunk-GBGCQTT2.js"
+    },
+    "chunk-A7NUT2HZ": {
+      "file": "chunk-A7NUT2HZ.js"
+    },
+    "chunk-SX5LHONA": {
+      "file": "chunk-SX5LHONA.js"
+    },
+    "chunk-OAU5KCPK": {
+      "file": "chunk-OAU5KCPK.js"
+    },
+    "chunk-GIZG7J7H": {
+      "file": "chunk-GIZG7J7H.js"
+    }
+  }
+}
