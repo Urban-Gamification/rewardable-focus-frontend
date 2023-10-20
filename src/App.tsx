@@ -8,8 +8,31 @@ import { store } from './redux/store';
 import { Provider } from 'react-redux';
 import { TasksPage } from './pages';
 
+import { WelcomePage, LogOutPage } from './pages';
+import { config } from './config';
+import { AuthProvider } from './components';
+
 const router = createBrowserRouter([
   {
+
+    path: config.routes.home,
+    element: (
+      <AuthProvider>
+        <a href="/login">login</a>
+      </AuthProvider>
+    )
+  },
+  {
+    path: config.routes.login,
+    element: <WelcomePage />
+  },
+  {
+    path: config.routes.logout,
+    element: (
+      <AuthProvider>
+        <LogOutPage />
+      </AuthProvider>
+    )
     path: '/',
     element: <TasksPage />
   }
@@ -43,6 +66,8 @@ function App() {
       <Provider store={store}>
         <CssBaseline />
         <RouterProvider router={router} />
+        {/* <OrbisProvider defaltOrbis={orbis}> */}
+        {/* </OrbisProvider> */}
       </Provider>
     </ThemeProvider>
   );
