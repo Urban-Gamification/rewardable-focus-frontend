@@ -1,11 +1,19 @@
-import { Fab, Grid, Typography } from '@mui/material';
+import { AppBar, Avatar, Fab, Grid, Toolbar, Typography } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { Link } from 'react-router-dom';
-import { TaskCard } from '../components';
+import { BottomNav, TaskCard } from '../components';
 
 export function TasksPage() {
   return (
     <>
+      <AppBar position="sticky">
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Tasks
+          </Typography>
+          <Avatar />
+        </Toolbar>
+      </AppBar>
       <Grid p={2} container spacing={4} direction="column">
         <Grid item>
           <Typography variant="h4">Action required</Typography>
@@ -63,7 +71,7 @@ export function TasksPage() {
           </Grid>
         </Grid>
       </Grid>
-
+      <BottomNav />
       <Link to="/new-task">
         <Fab
           color="primary"

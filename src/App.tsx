@@ -35,8 +35,26 @@ const router = createBrowserRouter([
     )
     path: '/',
     element: <TasksPage />
+  },
+  {
+    path: '/new-task',
+    element: <div>new task Component</div>
+  },
+  {
+    path: '/global',
+    element: <div>Global Component</div>
+  },
+  {
+    path: '/statistics',
+    element: <div>Statistics Component</div>
+  },
+  {
+    path: '/achievements',
+    element: <div>Achievements Component</div>
   }
 ]);
+
+
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
