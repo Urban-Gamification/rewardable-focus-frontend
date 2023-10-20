@@ -6,6 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
+import { TasksPage } from './pages';
 
 import { WelcomePage, LogOutPage } from './pages';
 import { config } from './config';
@@ -13,6 +14,7 @@ import { AuthProvider } from './components';
 
 const router = createBrowserRouter([
   {
+
     path: config.routes.home,
     element: (
       <AuthProvider>
@@ -31,6 +33,8 @@ const router = createBrowserRouter([
         <LogOutPage />
       </AuthProvider>
     )
+    path: '/',
+    element: <TasksPage />
   }
 ]);
 
