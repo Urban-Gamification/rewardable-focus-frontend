@@ -7,44 +7,10 @@ import './App.css';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
 
-import {
-  AnswersPage,
-  ChatPage,
-  ChatsPage,
-  LogInPage,
-  NewFocusPage,
-  SetupPage,
-  SignUpPage
-} from './pages';
-
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <ChatsPage />
-  },
-  {
-    path: '/login',
-    element: <LogInPage />
-  },
-  {
-    path: '/signup',
-    element: <SignUpPage />
-  },
-  {
-    path: '/chat',
-    element: <ChatPage />
-  },
-  {
-    path: '/answers',
-    element: <AnswersPage />
-  },
-  {
-    path: '/setup',
-    element: <SetupPage />
-  },
-  {
-    path: '/new-focus',
-    element: <NewFocusPage />
+    element: <div>hello there!</div>
   }
 ]);
 
@@ -74,10 +40,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        {/* <OrbisProvider defaultOrbis={orbis}> */}
         <CssBaseline />
         <RouterProvider router={router} />
-        {/* </OrbisProvider> */}
       </Provider>
     </ThemeProvider>
   );
