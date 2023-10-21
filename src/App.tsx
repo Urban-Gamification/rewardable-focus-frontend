@@ -8,7 +8,7 @@ import { store } from './redux/store';
 import { Provider } from 'react-redux';
 import { TasksPage } from './pages';
 
-import { WelcomePage, LogOutPage } from './pages';
+import { WelcomePage, LogOutPage, StatsPage } from './pages';
 import { config } from './config';
 import { AuthProvider } from './components';
 
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/statistics',
-    element: <div>Statistics Component</div>
+    element: <StatsPage/>
   },
   {
     path: '/achievements',
