@@ -2,7 +2,10 @@
   "routes": {
     "home": "/",
     "login": "/login",
-    "logout": "/logout"
+    "logout": "/logout",
+    "tasks": "/tasks",
+    "new_focus": "/new-focus",
+    "statistics": "/statistics"  
   },
   "env": {
     "REACT_APP_DOMAIN_ID": "dev-oqx1xbnfnm5yqrbe.us.auth0.com",

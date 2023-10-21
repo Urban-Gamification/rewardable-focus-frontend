@@ -18,7 +18,15 @@ export function WelcomePage() {
         >
           <Typography component="h1" variant="h5">
             Welcome
+          </Typography>   
+          
+          <Box sx={{ mt: 1 }}> 
+          <Typography variant="subtitle1" color="text.secondary">
+          
+          Turn your focus areas 
+into joyful challenges!
           </Typography>
+          </Box>
           <Box sx={{ mt: 1 }}>
             <Button
               onClick={() => loginWithRedirect()}
@@ -30,7 +38,7 @@ export function WelcomePage() {
             >
               Log In
             </Button>
-            <Button
+            {/* <Button
               onClick={() => loginWithRedirect()}
               // onClick={() => loginWithPopup()}
               type="button"
@@ -39,7 +47,7 @@ export function WelcomePage() {
               sx={{ mt: 3, mb: 2 }}
             >
               Log Out
-            </Button>
+            </Button> */}
           </Box>
         </Box>
       </Container>
