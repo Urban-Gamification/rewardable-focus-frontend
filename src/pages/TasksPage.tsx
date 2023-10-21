@@ -81,7 +81,9 @@ export function TasksPage() {
             <Grid item>
               <Typography variant="h5">Main tasks</Typography>
             </Grid>
-             {goals.map((goal) => (
+             {goals
+             .filter((goal) => goal.isActive)
+             .map((goal) => (
                <Grid item>
                  <Grid container spacing={1}>
                    <Grid item xs={12}>
@@ -118,17 +120,20 @@ export function TasksPage() {
             <Grid item>
               <Typography variant="h4">Completed</Typography>
             </Grid>
-            <Grid item>
-              <Grid container spacing={1}>
-                <Grid item xs={12}>
-                  <TaskCard
-                    isCompleted
-                    title="Sleep 7 hours / daily"
-                    summaryText="5 ⚡ 5 🌱 Reward in: 9 days"
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
+            {goals
+             .filter((goal) => !goal.isActive)
+             .map((goal) => (
+               <Grid item>
+                 <Grid container spacing={1}>
+                   <Grid item xs={12}>
+                     <TaskCard
+                       title={goal.name}
+                       summaryText={`${goal.rewardEnergy} ⚡ ${goal.rewardGrowth} 🌱 Reward in: ${countDaysFromTodayTillRewardDay(goal.rewardDate)} days`}
+                     />
+                   </Grid>
+                 </Grid>
+               </Grid>
+             ))}
           </Grid>
         </Grid>
       </Grid>
