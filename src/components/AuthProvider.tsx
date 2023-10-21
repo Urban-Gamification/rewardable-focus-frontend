@@ -13,7 +13,7 @@ export function AuthProvider({ children }: { children: React.ReactElement }) {
   React.useEffect(() => {
     if (isAuthenticated && user) {
       localStorage.setItem('user', JSON.stringify(user));
-      fetch(`${config.apiUrl}/create/user`, {
+      fetch(`${config.apiUrl}/user/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
