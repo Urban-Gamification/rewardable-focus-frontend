@@ -38,6 +38,8 @@ export function AuthProvider({ children }: { children: React.ReactElement }) {
 
   if (!isAuthenticated) {
     return <Navigate to={config.routes.login} />;
+  } else {
+    return <Navigate to={config.routes.tasks} />;
   }
 
   return children;
