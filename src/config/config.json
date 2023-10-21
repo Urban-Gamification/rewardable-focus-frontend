@@ -7,5 +7,6 @@
   "env": {
     "REACT_APP_DOMAIN_ID": "dev-oqx1xbnfnm5yqrbe.us.auth0.com",
     "REACT_APP_CLIENT_ID": "dl4iyAI9nVM2jUCXzAlMpTUEK6ve7QLu"
-  }
+  },
+  "apiUrl": "http://localhost:3000"
 }
