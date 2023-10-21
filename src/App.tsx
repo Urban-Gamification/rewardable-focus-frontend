@@ -14,7 +14,6 @@ import { AuthProvider } from './components';
 
 const router = createBrowserRouter([
   {
-
     path: config.routes.home,
     element: (
       <AuthProvider>
@@ -33,6 +32,8 @@ const router = createBrowserRouter([
         <LogOutPage />
       </AuthProvider>
     )
+  }, // Add a comma here
+  {
     path: '/',
     element: <TasksPage />
   },
@@ -53,8 +54,6 @@ const router = createBrowserRouter([
     element: <div>Achievements Component</div>
   }
 ]);
-
-
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
