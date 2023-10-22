@@ -6,18 +6,21 @@ import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
-import { TasksPage } from './pages';
+import { NewTaskPage, TasksPage } from './pages';
+import { Typography } from '@mui/material';
 
 import { WelcomePage, LogOutPage, StatsPage } from './pages';
 import { config } from './config';
 import { AuthProvider } from './components';
+
+import { AchievementsPage } from './pages/AchievementsPage';
 
 const router = createBrowserRouter([
   {
     path: config.routes.home,
     element: (
       <AuthProvider>
-        <a href="/login">login</a>
+        <TasksPage />
       </AuthProvider>
     )
   },
@@ -39,19 +42,20 @@ const router = createBrowserRouter([
   },
   {
     path: '/new-task',
-    element: <div>new task Component</div>
+    element: <NewTaskPage />
   },
   {
     path: '/global',
-    element: <div>Global Component</div>
+    element: <Typography variant="h4">Coming soon</Typography>
   },
   {
     path: '/statistics',
-    element: <StatsPage/>
+
+    element: <StatsPage />
   },
   {
     path: '/achievements',
-    element: <div>Achievements Component</div>
+    element: <AchievementsPage />
   }
 ]);
 

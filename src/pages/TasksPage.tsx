@@ -7,19 +7,18 @@ import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 import { set } from 'react-hook-form';
 
-
-interface Goal {
+export interface Goal {
   name: string;
   userId: string;
   frequency: {
     type:
-    | "hourly"
-    | "every_2_hours"
-    | "every_4_hours"
-    | "daily"
-    | "every_2_days"
-    | "weekly"
-    | "monthly";
+      | 'hourly'
+      | 'every_2_hours'
+      | 'every_4_hours'
+      | 'daily'
+      | 'every_2_days'
+      | 'weekly'
+      | 'monthly';
   };
   isFavourite: boolean;
   rewardDate: Date;
@@ -45,22 +44,19 @@ export function TasksPage() {
 
   React.useEffect(() => {
     if (isAuthenticated && user) {
-      
       const fetchGoals = async () => {
         // const response = await fetch(`${config.apiUrl}/goals/${user.email}`);
-        const response = await fetch(`${config.apiUrl}/goals/pavelfantastico@gmail.com`);
+        const response = await fetch(
+          `${config.apiUrl}/goals/pavelfantastico@gmail.com`
+        );
         const goals = await response.json();
         console.log(JSON.stringify(goals));
 
         setGoals(goals);
-      }
+      };
       fetchGoals();
-
     }
   }, [isAuthenticated, user]);
-
-
-
 
   return (
     <>
@@ -81,21 +77,24 @@ export function TasksPage() {
             <Grid item>
               <Typography variant="h5">Main tasks</Typography>
             </Grid>
-             {goals
-             .filter((goal) => goal.isActive)
-             .map((goal) => (
-               <Grid item>
-                 <Grid container spacing={1}>
-                   <Grid item xs={12}>
-                     <TaskCard
-                       title={goal.name}
-                       summaryText={`${goal.rewardEnergy} ⚡ ${goal.rewardGrowth} 🌱 Reward in: ${countDaysFromTodayTillRewardDay(goal.rewardDate)} days`}
-                     />
-                   </Grid>
-                 </Grid>
-               </Grid>
-             ))}
-          
+            {goals
+              .filter((goal) => goal.isActive)
+              .map((goal) => (
+                <Grid item>
+                  <Grid container spacing={1}>
+                    <Grid item xs={12}>
+                      <TaskCard
+                        title={goal.name}
+                        summaryText={`${goal.rewardEnergy} ⚡ ${
+                          goal.rewardGrowth
+                        } 🌱 Reward in: ${countDaysFromTodayTillRewardDay(
+                          goal.rewardDate
+                        )} days`}
+                      />
+                    </Grid>
+                  </Grid>
+                </Grid>
+              ))}
           </Grid>
         </Grid>
         <Grid item>
@@ -121,19 +120,23 @@ export function TasksPage() {
               <Typography variant="h4">Completed</Typography>
             </Grid>
             {goals
-             .filter((goal) => !goal.isActive)
-             .map((goal) => (
-               <Grid item>
-                 <Grid container spacing={1}>
-                   <Grid item xs={12}>
-                     <TaskCard
-                       title={goal.name}
-                       summaryText={`${goal.rewardEnergy} ⚡ ${goal.rewardGrowth} 🌱 Reward in: ${countDaysFromTodayTillRewardDay(goal.rewardDate)} days`}
-                     />
-                   </Grid>
-                 </Grid>
-               </Grid>
-             ))}
+              .filter((goal) => !goal.isActive)
+              .map((goal) => (
+                <Grid item>
+                  <Grid container spacing={1}>
+                    <Grid item xs={12}>
+                      <TaskCard
+                        title={goal.name}
+                        summaryText={`${goal.rewardEnergy} ⚡ ${
+                          goal.rewardGrowth
+                        } 🌱 Reward in: ${countDaysFromTodayTillRewardDay(
+                          goal.rewardDate
+                        )} days`}
+                      />
+                    </Grid>
+                  </Grid>
+                </Grid>
+              ))}
           </Grid>
         </Grid>
       </Grid>
