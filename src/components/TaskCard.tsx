@@ -8,8 +8,9 @@ import {
   Grid,
   IconButton,
   IconButtonProps,
-  InputBase,
+  MenuItem,
   Paper,
+  Select,
   Typography,
   styled
 } from '@mui/material';
@@ -22,6 +23,9 @@ import { CircularProgressWithLabel, LinearProgressWithLabel } from './core';
 export interface ChatsCardProps {
   title: string;
   summaryText: string;
+  progress: number;
+  stepValues: string[];
+  onStepSubmit?: (value: string) => void;
   isCompleted?: boolean;
   isFavorite?: boolean;
   onFavoriteClick?: () => void;
@@ -42,6 +46,9 @@ export function TaskCard({
   title,
   summaryText,
   isCompleted,
+  progress,
+  stepValues = [],
+  onStepSubmit,
   isFavorite,
   onFavoriteClick
 }: ChatsCardProps) {
@@ -73,7 +80,7 @@ export function TaskCard({
             </Grid>
           </Grid>
           <Grid item>
-            <CircularProgressWithLabel value={67} />
+            <CircularProgressWithLabel value={progress} />
           </Grid>
         </Grid>
       </CardContent>
@@ -88,7 +95,7 @@ export function TaskCard({
             >
               {isFavorite ? <StarIcon /> : <StarOutlineIcon />}
             </IconButton>
-            <LinearProgressWithLabel value={55} />
+            <LinearProgressWithLabel value={22} />
             <ExpandMore
               expand={expanded}
               onClick={handleExpandClick}
@@ -105,24 +112,30 @@ export function TaskCard({
                 component="form"
                 variant="outlined"
                 sx={{
-                  p: '2px 4px',
+                  p: '0 4px 0 0',
                   display: 'flex',
                   minHeight: 60,
                   alignItems: 'center'
                 }}
               >
-                <InputBase
-                  sx={{ ml: 1, flex: 1 }}
+                <Select
+                  sx={{ flex: 1, m: 0 }}
                   placeholder="Write today's value"
                   inputProps={{
-                    'aria-label': `submit today's value`
+                    'aria-label': `submit today's value`,
+                    name: 'stepValue'
                   }}
-                />
+                >
+                  {stepValues.map((stepValue) => (
+                    <MenuItem value={stepValue}>{stepValue}</MenuItem>
+                  ))}
+                </Select>
                 <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
                 <IconButton
                   color="primary"
                   sx={{ p: '10px' }}
                   aria-label="directions"
+                  onClick={() => onStepSubmit?.('6k')}
                 >
                   <SendIcon />
                 </IconButton>

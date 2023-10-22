@@ -68,7 +68,7 @@ export function TasksPage() {
           <Avatar />
         </Toolbar>
       </AppBar>
-      <Grid p={2} container spacing={4} direction="column">
+      <Grid p={2} pb={12} container spacing={4} direction="column">
         <Grid item>
           <Typography variant="h4">Action required</Typography>
         </Grid>
@@ -90,6 +90,8 @@ export function TasksPage() {
                         } 🌱 Reward in: ${countDaysFromTodayTillRewardDay(
                           goal.rewardDate
                         )} days`}
+                        progress={32}
+                        stepValues={goal.stepValues.split(',')}
                       />
                     </Grid>
                   </Grid>
