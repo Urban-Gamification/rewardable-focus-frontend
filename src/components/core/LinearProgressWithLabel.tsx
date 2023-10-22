@@ -7,9 +7,13 @@ import {
 
 export function LinearProgressWithLabel(props: LinearProgressProps) {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      <Box sx={{ width: '200px', mr: 1 }}>
-        <LinearProgress variant="determinate" {...props} />
+    <Box sx={{ display: 'flex', width: '100%', alignItems: 'center' }}>
+      <Box sx={{ width: '200%', mr: 1 }}>
+        <LinearProgress
+          style={{ height: '10px', width: '100%', borderRadius: '10px' }}
+          variant="determinate"
+          {...props}
+        />
       </Box>
       <Box sx={{ minWidth: 35 }}>
         <Typography variant="body2" color="text.secondary">{`${Math.round(
