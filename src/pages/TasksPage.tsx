@@ -53,6 +53,7 @@ export function TasksPage() {
         console.log(JSON.stringify(goals));
 
         setGoals(goals);
+        console.log(goals);
       };
       fetchGoals();
     }
