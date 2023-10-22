@@ -27,12 +27,8 @@ dependencies:
     specifier: ^1.9.7
     version: 1.9.7(react-redux@8.1.3)(react@18.2.0)
   material:
-    specifier: |-
-      link:@mui/material
-      @mui/material
-    version: |-
-      link:@mui/material
-      @mui/material
+    specifier: '@mui/material'
+    version: link:@mui/material
   react:
     specifier: ^18.2.0
     version: 18.2.0

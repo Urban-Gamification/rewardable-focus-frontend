@@ -17,7 +17,7 @@ import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import StarIcon from '@mui/icons-material/Star';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SendIcon from '@mui/icons-material/Send';
-import { CircularProgressWithLabel } from './core';
+import { CircularProgressWithLabel, LinearProgressWithLabel } from './core';
 
 export interface ChatsCardProps {
   title: string;
@@ -88,6 +88,7 @@ export function TaskCard({
             >
               {isFavorite ? <StarIcon /> : <StarOutlineIcon />}
             </IconButton>
+            <LinearProgressWithLabel value={55} />
             <ExpandMore
               expand={expanded}
               onClick={handleExpandClick}
