@@ -16,10 +16,100 @@ import {
 import { ArrowBack as ArrowBackIcon } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { RadioChips } from '../components';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { Goal } from './TasksPage';
+import { add, format } from 'date-fns';
+import { config } from '../config';
 
-export function NewTasksPage() {
+// const finishDates = [
+//   { label: '1 day', value: 86400000 },
+//   { label: '7 days', value: 86400000 },
+//   { label: '14 days', value: 86400000 },
+//   { label: '21 day', value: 86400000 },
+//   { label: '1 month', value: 86400000 },
+//   { label: '2 months', value: 86400000 },
+//   { label: '3 months', value: 86400000 },
+//   { label: '6 months', value: 86400000 }
+// ];
+
+const finishDatesMs: { [key: string]: any } = {
+  '1 day': 86400,
+  '7 days': 86400 * 7,
+  '14 days': 86400 * 14,
+  '21 day': 86400 * 21,
+  '1 month': 86400 * 30,
+  '2 months': 86400 * 60,
+  '3 months': 86400 * 90,
+  '6 months': 86400 * 180
+};
+
+interface IFormData {
+  name: string;
+  // stepValues: string[];
+  // stepGoal:
+  goalLength: string;
+  // | '1 day'
+  // | '7 days'
+  // | '14 days'
+  // | '21 day'
+  // | '1 month'
+  // | '2 months'
+  // | '3 months'
+  // | '6 months';
+  frequency:
+    | 'hourly'
+    | 'every_2_hours'
+    | 'every_4_hours'
+    | 'daily'
+    | 'every_2_days'
+    | 'weekly'
+    | 'monthly';
+  // | 'hourly'
+  // | 'every_2_hours'
+  // | 'every_4_hours'
+  // | 'daily'
+  // | 'every_2_days'
+  // | 'weekly'
+  // | 'monthly';
+}
+
+export function NewTaskPage() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { errors }
+  } = useForm<IFormData>();
+
+  const prepareData = async (data: IFormData) => {
+    const template: Goal = {
+      userId: 'pavelfantastico@gmail.com',
+      name: data.name,
+      // @ts-ignore
+      frequency: data.frequency,
+      // @ts-ignore
+      rewardDate: format(
+        add(new Date(), { seconds: finishDatesMs[data.goalLength] }),
+        'yyyy-MM-dd'
+      )
+    };
+
+    const postCreateTask = async () => {
+      // const response = await fetch(`${config.apiUrl}/goals/${user.email}`);
+      const response = await fetch(
+        `${config.apiUrl}/goals/pavelfantastico@gmail.com`
+      );
+      const goals = await response.json();
+      console.log(JSON.stringify(goals));
+    };
+    postCreateTask();
+  };
+
+  const onSubmit: SubmitHandler<IFormData> = prepareData;
+
   return (
-    <>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <AppBar position="sticky">
         <Toolbar>
           <Box mr={1}>
@@ -46,6 +136,7 @@ export function NewTasksPage() {
               </Grid>
               <Grid item>
                 <TextField
+                  {...register('name')}
                   fullWidth
                   id="#a"
                   label="What are you fosucing on?"
@@ -94,6 +185,7 @@ export function NewTasksPage() {
               </Grid>
               <Grid item>
                 <RadioChips
+                  // {...register('goalLength')}
                   items={[
                     '1 day',
                     '7 days',
@@ -104,7 +196,9 @@ export function NewTasksPage() {
                     '3 months',
                     '6 months'
                   ]}
-                  onChange={() => {}}
+                  onChange={(value) => {
+                    setValue('goalLength', value);
+                  }}
                 />
               </Grid>
               <Grid item>
@@ -122,7 +216,19 @@ export function NewTasksPage() {
                     'every week',
                     'every month'
                   ]}
-                  onChange={() => {}}
+                  onChange={(value) => {
+                    setValue(
+                      'frequency',
+                      value as
+                        | 'hourly'
+                        | 'every_2_hours'
+                        | 'every_4_hours'
+                        | 'daily'
+                        | 'every_2_days'
+                        | 'weekly'
+                        | 'monthly'
+                    );
+                  }}
                 />
               </Grid>
             </Grid>
@@ -132,11 +238,11 @@ export function NewTasksPage() {
           p={2}
           sx={{ position: 'fixed', bottom: 0, left: 0, width: '100%' }}
         >
-          <Button fullWidth variant="contained" size="large">
+          <Button fullWidth type="submit" variant="contained" size="large">
             Add the task
           </Button>
         </Box>
       </Box>
-    </>
+    </form>
   );
 }

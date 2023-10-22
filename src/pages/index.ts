@@ -1,4 +1,8 @@
 export { WelcomePage } from './WelcomePage';
+import { AchievementsPage } from './AchievementsPage';
 export { LogOutPage } from './LogOutPage';
 export { TasksPage } from './TasksPage';
-export { NewTasksPage } from './NewTaskPage';
+
+export { StatsPage } from './StatsPage';
+
+export { NewTaskPage } from './NewTaskPage';

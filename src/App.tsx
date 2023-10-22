@@ -6,12 +6,14 @@ import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
-import { NewTasksPage, TasksPage } from './pages';
+import { NewTaskPage, TasksPage } from './pages';
 import { Typography } from '@mui/material';
 
-import { WelcomePage, LogOutPage } from './pages';
+import { WelcomePage, LogOutPage, StatsPage } from './pages';
 import { config } from './config';
 import { AuthProvider } from './components';
+
+import { AchievementsPage } from './pages/AchievementsPage';
 
 const router = createBrowserRouter([
   {
@@ -35,12 +37,12 @@ const router = createBrowserRouter([
     )
   }, // Add a comma here
   {
-    path: '/',
+    path: '/tasks',
     element: <TasksPage />
   },
   {
     path: '/new-task',
-    element: <NewTasksPage />
+    element: <NewTaskPage />
   },
   {
     path: '/global',
@@ -48,15 +50,14 @@ const router = createBrowserRouter([
   },
   {
     path: '/statistics',
-    element: <Typography variant="h4">Coming soon</Typography>
+
+    element: <StatsPage />
   },
   {
     path: '/achievements',
-    element: <Typography variant="h4">Coming soon</Typography>
+    element: <AchievementsPage />
   }
 ]);
-
-
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
