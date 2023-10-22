@@ -97,9 +97,10 @@ export function NewTaskPage() {
 
     const postCreateTask = async () => {
       // const response = await fetch(`${config.apiUrl}/goals/${user.email}`);
-      const response = await fetch(
-        `${config.apiUrl}/goals/pavelfantastico@gmail.com`
-      );
+      const response = await fetch(`${config.apiUrl}/goal/create`, {
+        method: 'post',
+        body: JSON.stringify(template)
+      });
       const goals = await response.json();
       console.log(JSON.stringify(goals));
     };
