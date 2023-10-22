@@ -6,7 +6,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
-import { TasksPage } from './pages';
+import { NewTasksPage, TasksPage } from './pages';
+import { Typography } from '@mui/material';
 
 import { WelcomePage, LogOutPage } from './pages';
 import { config } from './config';
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     path: config.routes.home,
     element: (
       <AuthProvider>
-        <a href="/login">login</a>
+        <TasksPage />
       </AuthProvider>
     )
   },
@@ -39,21 +40,23 @@ const router = createBrowserRouter([
   },
   {
     path: '/new-task',
-    element: <div>new task Component</div>
+    element: <NewTasksPage />
   },
   {
     path: '/global',
-    element: <div>Global Component</div>
+    element: <Typography variant="h4">Coming soon</Typography>
   },
   {
     path: '/statistics',
-    element: <div>Statistics Component</div>
+    element: <Typography variant="h4">Coming soon</Typography>
   },
   {
     path: '/achievements',
-    element: <div>Achievements Component</div>
+    element: <Typography variant="h4">Coming soon</Typography>
   }
 ]);
+
+
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
