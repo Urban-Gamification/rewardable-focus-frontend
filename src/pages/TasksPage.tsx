@@ -91,6 +91,7 @@ export function TasksPage() {
                           goal.rewardDate
                         )} days`}
                         progress={32}
+                        stepValues={goal.stepValues.split(',')}
                       />
                     </Grid>
                   </Grid>
